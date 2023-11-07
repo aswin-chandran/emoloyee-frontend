@@ -7,7 +7,7 @@ import Employee from "./ui-components/Employee";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />

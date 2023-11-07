@@ -1,5 +1,5 @@
 
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../App.css'
@@ -16,7 +16,7 @@ const Navbar = () => {
           </Typography >
           <div className='NavLink'>
           <Button  color="inherit"  ><Link  style={{textDecoration:'none',color:'white'}} to='/home'>Home</Link></Button>
-          <Button color="inherit"><Link style={{textDecoration:'none',color:'white'}} to='/employee'>Employee</Link></Button>
+          <Button color="inherit"><Link style={{textDecoration:'none',color:'white'}} to='/employee'>Employee Form</Link></Button>
           </div>
         </Toolbar>
       </AppBar>
