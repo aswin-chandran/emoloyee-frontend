@@ -15,7 +15,7 @@ const Navbar = () => {
             EmployeeApp
           </Typography >
           <div className='NavLink'>
-          <Button  color="inherit"  ><Link  style={{textDecoration:'none',color:'white'}} to='/home'>Home</Link></Button>
+          <Button  color="inherit"  ><Link  style={{textDecoration:'none',color:'white'}} to='/'>Home</Link></Button>
           <Button color="inherit"><Link style={{textDecoration:'none',color:'white'}} to='/employee'>Employee Form</Link></Button>
           </div>
         </Toolbar>

@@ -3,15 +3,12 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 
 const Employee = () => {
-  useEffect(()=>{
 
-    axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
-  })
 
   return (
     <div style={{margin:'5% 30%',justifyContent:'center',display:'flex', textAlign:'center'}}>
+
+
       <Box
       component="form"
       sx={{
@@ -19,7 +16,7 @@ const Employee = () => {
       }}
       noValidate
       autoComplete="off"
-    >
+    ><h2>Add Employee</h2> <br />
       <div>
         <TextField label="Name" />
         <TextField label="Designation" />
@@ -29,7 +26,7 @@ const Employee = () => {
       <TextField label="Salary" />
       </div>
       <br />
-      <Button size='large' variant="outlined" color='success'> Add Employee</Button>
+      <Button size='large' variant="contained" color='success'> Add Employee</Button>
     </Box>
  
     </div>
