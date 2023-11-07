@@ -4,69 +4,56 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import React from "react";
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+
 
 const Home = () => {
+  const [data,setData]= useState([])
 
+  useEffect(()=>{ 
+
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res=>setData(res.data))
+    .catch(err=>console.log(err))
+  },[])
 
   return (
     <div style={{ margin: "10%" }}>
       <Grid container spacing={2}>
-        <Grid item xs={4}>
+       
+
+{
+  data.map((user,index)=>{
+    return (
+      <Grid key={index} item xs={4}>
           <Card sx={{ minWidth: 275 }}>
             <CardContent>
               <Typography variant="h5" component="div">
-                Arjun
+               {user.id}
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                adjective
+               {user.name}
               </Typography>
               <Typography variant="body2">
-                well meaning and kindly.
+               {user.email}
                 <br />
-                {'"a benevolent smile"'}
-              </Typography>
-            </CardContent>
-          
-          </Card>
-        </Grid>
-        <Grid item xs={4}>
-          <Card sx={{ minWidth: 275 }}>
-            <CardContent>
-              <Typography variant="h5" component="div">
-                Aswin
-              </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                adjective
-              </Typography>
-              <Typography variant="body2">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
+               
               </Typography>
             </CardContent>
        
           </Card>
         </Grid>
-        <Grid item xs={4}>
-          <Card sx={{ minWidth: 275 }}>
-            <CardContent>
-              <Typography variant="h5" component="div">
-                Amal
-              </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                adjective
-              </Typography>
-              <Typography variant="body2">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
-            </CardContent>
-          
-          </Card>
-        </Grid>
+
+    )
+  })
+}
+
+
+
+
+
+        
       </Grid>
     </div>
   );

@@ -1,7 +1,15 @@
 import { Box, Button, TextField } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
 
 const Employee = () => {
+  useEffect(()=>{
+
+    axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  })
+
   return (
     <div style={{margin:'5% 30%',justifyContent:'center',display:'flex', textAlign:'center'}}>
       <Box
